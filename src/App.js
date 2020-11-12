@@ -17,13 +17,11 @@ const App = () => {
     <div style={{
       backgroundColor: darkTheme ? '#23292f' : 'white'
       }}>
-      <HashRouter basename="/poke">
+      <HashRouter basename="/">
         <Navbar />
         <div >
-          <Switch>
-            <Route exact path='/' component={PokeTracker}/>
-            <Route exact path='/tracker' component={Kanto} />
-          </Switch>
+          <Route exact path='/' component={PokeTracker}/>
+          <Route exact path='/tracker' component={Kanto} />
         </div>
       </HashRouter>
     </div>
