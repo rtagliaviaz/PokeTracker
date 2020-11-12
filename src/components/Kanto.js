@@ -13,13 +13,15 @@ import pokeball from '../resources/pokeball.png'
 import pokeballSprite from '../resources/pokeballSprite.png'
 
 
+
 const Kanto = () => {
   //useSelector and useDispatch
-  const {pokemonEntries, loader, error, counter, generation, startFrom } = useSelector(store => store.trackerReducer)
+  const {pokemonEntries, loader, error, counter, generation, startFrom, darkTheme } = useSelector(store => store.trackerReducer)
   const dispatch = useDispatch()
 
   //useState
   const [useSprites, setUseSprites] = useState(false)
+
 
   const showContent = () => {
     if (loader) {
@@ -31,10 +33,26 @@ const Kanto = () => {
     }
    
     return (
-      <div className="pokemonsContainer">
-        <h1 className="catchedTracker">Catched: {counter}</h1>
+      <div className="pokemonsContainer" >
+        <h1 className="catchedTracker">{useSprites ? 
+          <React.Fragment>
+            <img className="pokeballSpriteCounter" src={pokeballSprite} alt=""/>
+            <p></p>{counter}
+          </React.Fragment>
+          : 
+          <React.Fragment>
+            <img className="pokeballCounter" src={pokeball} alt=""/>
+            {counter}
+          </React.Fragment>} </h1>
         <div className="spritesButton">
-          <button className="spritesButton" onClick={wantSprites}>
+          <button 
+            className="spritesButton" 
+            onClick={wantSprites}
+            style={{
+              backgroundColor: darkTheme ? '#1c2228' : 'red',
+              outline: darkTheme ? '1px solid #c4d2e1' : 'none',
+              color: darkTheme ? '#c4d2e1' : 'white'
+            }}>
             {!useSprites ? 'Sprites' : 'Models' }
           </button>
         </div>
@@ -63,8 +81,20 @@ const Kanto = () => {
         {pokemon.catched ? 
         <React.Fragment>
           {useSprites ? 
-          <img className="pokeballSprite" src={pokeballSprite} alt=""/> :
-          <img className="pokeballImg" src={pokeball} alt=""/> 
+          <img 
+            className="pokeballSprite" 
+            src={pokeballSprite} 
+            alt=""
+            style={{
+              outline: darkTheme ? '1px solid #c4d2e1' : '1px solid red'
+            }}/> :
+          <img 
+            className="pokeballImg" 
+            src={pokeball} 
+            alt="" 
+            style={{
+              outline: darkTheme ? '1px solid #c4d2e1' : '1px solid red'
+            }}/> 
           }
         </React.Fragment>
          :  
@@ -87,6 +117,7 @@ const Kanto = () => {
     dispatch(trackerActions.decrementCounter(id))
   }
 
+  
   // get pokemon with dispatch
   const pokeget = () => {
     dispatch(trackerActions.getPokemons())
@@ -99,13 +130,13 @@ const Kanto = () => {
   }, [])
 
   //useEffect to save generation and startFrom values in the localStorage
-  useEffect(() => {
+  useEffect(() => { 
     localStorage.setItem('generation', generation)
     localStorage.setItem('startFrom', startFrom)
   })
 
   return (
-    <div>
+    <div >
       {showContent()}
     </div>
   )

@@ -8,7 +8,8 @@ import {
   DECREMENT_COUNTER, 
   FROM, 
   GENERATION, 
-  COUNTER
+  COUNTER,
+  DARK
 } from '../types/trackerTypes'
 
 export const getPokemons = (gen, from) => async (dispatch, getState) => {
@@ -166,7 +167,19 @@ export const getCounterValue = () => (dispatch, getState) => {
   })
 }
 
-// if ([id].catched) {
-//   return dispatch({
-//     type: INCREMENT_COUNTER
-//   })
+export const changeTheme = () => (dispatch, getState) => {
+  const {darkTheme} = getState().trackerReducer
+  
+
+  if(darkTheme) {
+    return dispatch({
+      type: DARK,
+      payload: false
+    })
+  }
+
+  dispatch({
+    type: DARK,
+    payload: true
+  })
+}

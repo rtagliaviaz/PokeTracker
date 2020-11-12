@@ -5,33 +5,49 @@ import * as trackerActions from '../actions/trackerActions'
 import dayNight from '../resources/dayNight.png'
 
 const Navbar = () => {
-  const {counter} = useSelector(store => store.trackerReducer)
+  const {counter, darkTheme} = useSelector(store => store.trackerReducer)
   const dispatch = useDispatch()
 
+  const toDark = () => {
+    dispatch(trackerActions.changeTheme())
+ 
+  }
   
   return (
-      <nav>
+      <nav style={{
+        backgroundColor: darkTheme ? '#1c2228' : 'red',
+        color: darkTheme? '#c4d2e1' : 'white'
+        }}>
         <ul>
-          <div className="nav-title">
-            <li><Link to='/' className="navTitle" >PokeTracker</Link></li>
+          <div className="nav-title" >
+            <li><Link to='/' className="navTitle" style={{ color: darkTheme ? '#c4d2e1' : 'white'}}>PokeTracker</Link></li>
           </div>
           
           <div className="nav-links">
           <div className="darkMode">
-            <img src={dayNight} alt=""/>
+            <img onClick={toDark} src={dayNight} alt=""/>
           </div>
-            <li className="catched">catched: {counter}</li>
+            <li className="catched">Counter: {counter}</li>
+            {/* <li className="catched">catched: {counter}</li> */}
             <div className="dropdown">
-              <button className="dropbtn">Generation</button>
+              <button className="dropbtn" style={{
+                backgroundColor: darkTheme ? '#1c2228' : 'red',
+                color: darkTheme? '#c4d2e1' : 'white'}}>Generation</button>
               <div className="dropdown-content">
                 <Link 
+                style={{
+                  backgroundColor: darkTheme ? '#1c2228' : 'red',
+                  color: darkTheme ? '#c4d2e1': 'white'}}
                 className="Link"
                 to='/tracker'
                 onClick={e => dispatch(trackerActions.getPokemons(1, 1))}>
                   gen 1
                 </Link>
 
-                <Link 
+                <Link
+                style={{
+                  backgroundColor: darkTheme ? '#1c2228' : 'red',
+                  color: darkTheme ? '#c4d2e1': 'white'}}
                 className="Link"
                 to='/tracker'
                 onClick={e => dispatch(trackerActions.getPokemons(2, 152))}>
@@ -39,6 +55,9 @@ const Navbar = () => {
                 </Link>
 
                 <Link 
+                style={{
+                  backgroundColor: darkTheme ? '#1c2228' : 'red',
+                  color: darkTheme ? '#c4d2e1': 'white'}}
                 className="Link"
                 to='/tracker'
                 onClick={e => dispatch(trackerActions.getPokemons(3, 252))}>
@@ -46,6 +65,9 @@ const Navbar = () => {
                 </Link>
 
                 <Link 
+                style={{
+                  backgroundColor: darkTheme ? '#1c2228' : 'red',
+                  color: darkTheme ? '#c4d2e1': 'white'}}
                 className="Link"
                 to='/tracker'
                 onClick={e => dispatch(trackerActions.getPokemons(4, 387))}>
@@ -53,6 +75,9 @@ const Navbar = () => {
                 </Link>
 
                 <Link 
+                style={{
+                  backgroundColor: darkTheme ? '#1c2228' : 'red',
+                  color: darkTheme ? '#c4d2e1': 'white'}}
                 className="Link"
                 to='/tracker'
                 onClick={e => dispatch(trackerActions.getPokemons(5, 494))}>
@@ -60,6 +85,9 @@ const Navbar = () => {
                 </Link>
 
                 <Link 
+                style={{
+                  backgroundColor: darkTheme ? '#1c2228' : 'red',
+                  color: darkTheme ? '#c4d2e1': 'white'}}
                 className="Link"
                 to='/tracker'
                 onClick={e => dispatch(trackerActions.getPokemons(6, 650))}>
@@ -67,6 +95,9 @@ const Navbar = () => {
                 </Link>
 
                 <Link 
+                style={{
+                  backgroundColor: darkTheme ? '#1c2228' : 'red',
+                  color: darkTheme ? '#c4d2e1': 'white'}}
                 className="Link"
                 to='/tracker'
                 onClick={e => dispatch(trackerActions.getPokemons(7, 722))}>
@@ -74,6 +105,9 @@ const Navbar = () => {
                 </Link>
 
                 <Link 
+                style={{
+                  backgroundColor: darkTheme ? '#1c2228' : 'red',
+                  color: darkTheme ? '#c4d2e1': 'white'}}
                 className="Link"
                 to='/tracker'
                 onClick={e => dispatch(trackerActions.getPokemons(8, 810))} >

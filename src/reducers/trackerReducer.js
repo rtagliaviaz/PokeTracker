@@ -1,4 +1,15 @@
-import { LOADING, ERROR, GET_POKEMONS, CATCHED, INCREMENT_COUNTER, DECREMENT_COUNTER, FROM, GENERATION, COUNTER} from '../types/trackerTypes'
+import {
+    LOADING,
+    ERROR,
+    GET_POKEMONS,
+    CATCHED,
+    INCREMENT_COUNTER,
+    DECREMENT_COUNTER,
+    FROM,
+    GENERATION,
+    COUNTER,
+    DARK
+  } from '../types/trackerTypes'
 
 const INITIAL_STATE = {
   loader: false,
@@ -6,7 +17,8 @@ const INITIAL_STATE = {
   counter: 0,
   pokemonEntries: [],
   generation: '',
-  startFrom: ''
+  startFrom: '',
+  darkTheme: false
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -47,6 +59,12 @@ export default (state = INITIAL_STATE, action) => {
         error: ''
       }
 
+    case DARK:
+      return{
+        ...state,
+        darkTheme: action.payload
+      }
+      
     case INCREMENT_COUNTER:
       return {
         ...state,
