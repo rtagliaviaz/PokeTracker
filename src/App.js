@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
 //components
@@ -17,13 +17,15 @@ const App = () => {
     <div style={{
       backgroundColor: darkTheme ? '#23292f' : 'white'
       }}>
-    <BrowserRouter>
-      <Navbar />
-      <div >
-        <Route exact path='/' component={PokeTracker}/>
-        <Route exact path='/tracker' component={Kanto} />
-      </div>
-    </BrowserRouter>
+      <HashRouter basename="/poke">
+        <Navbar />
+        <div >
+          <Switch>
+            <Route exact path='/' component={PokeTracker}/>
+            <Route exact path='/tracker' component={Kanto} />
+          </Switch>
+        </div>
+      </HashRouter>
     </div>
   );
 }

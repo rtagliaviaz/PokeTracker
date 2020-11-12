@@ -126,7 +126,10 @@ const Kanto = () => {
   // useEffect to get pokemons
   useEffect(() => {
     pokeget()
-    dispatch(trackerActions.getCounterValue())
+    if (localStorage.getItem('catchedPokemons')) {
+      dispatch(trackerActions.getCounterValue())
+    }
+    
   }, [])
 
   //useEffect to save generation and startFrom values in the localStorage
