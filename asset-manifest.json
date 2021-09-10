@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/PokeTracker/static/css/main.e75216fe.chunk.css",
-    "main.js": "/PokeTracker/static/js/main.d1a9532e.chunk.js",
-    "main.js.map": "/PokeTracker/static/js/main.d1a9532e.chunk.js.map",
+    "main.css": "/PokeTracker/static/css/main.f25a977a.chunk.css",
+    "main.js": "/PokeTracker/static/js/main.b52b4195.chunk.js",
+    "main.js.map": "/PokeTracker/static/js/main.b52b4195.chunk.js.map",
     "runtime-main.js": "/PokeTracker/static/js/runtime-main.f8fb094d.js",
     "runtime-main.js.map": "/PokeTracker/static/js/runtime-main.f8fb094d.js.map",
-    "static/js/2.91a173ae.chunk.js": "/PokeTracker/static/js/2.91a173ae.chunk.js",
-    "static/js/2.91a173ae.chunk.js.map": "/PokeTracker/static/js/2.91a173ae.chunk.js.map",
+    "static/js/2.924cf59e.chunk.js": "/PokeTracker/static/js/2.924cf59e.chunk.js",
+    "static/js/2.924cf59e.chunk.js.map": "/PokeTracker/static/js/2.924cf59e.chunk.js.map",
     "index.html": "/PokeTracker/index.html",
-    "static/css/main.e75216fe.chunk.css.map": "/PokeTracker/static/css/main.e75216fe.chunk.css.map",
-    "static/js/2.91a173ae.chunk.js.LICENSE.txt": "/PokeTracker/static/js/2.91a173ae.chunk.js.LICENSE.txt",
+    "static/css/main.f25a977a.chunk.css.map": "/PokeTracker/static/css/main.f25a977a.chunk.css.map",
+    "static/js/2.924cf59e.chunk.js.LICENSE.txt": "/PokeTracker/static/js/2.924cf59e.chunk.js.LICENSE.txt",
     "static/media/dayNight.a4716d34.png": "/PokeTracker/static/media/dayNight.a4716d34.png",
     "static/media/error.833b7ecb.png": "/PokeTracker/static/media/error.833b7ecb.png",
     "static/media/pokeball.ed58ec53.png": "/PokeTracker/static/media/pokeball.ed58ec53.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f8fb094d.js",
-    "static/js/2.91a173ae.chunk.js",
-    "static/css/main.e75216fe.chunk.css",
-    "static/js/main.d1a9532e.chunk.js"
+    "static/js/2.924cf59e.chunk.js",
+    "static/css/main.f25a977a.chunk.css",
+    "static/js/main.b52b4195.chunk.js"
   ]
 }
